@@ -1,0 +1,18 @@
+<div class="box  mt-5" >
+    <h2  style="text-align:center ;">Cart</h2>
+
+<div>
+        <span> <p>the number of Your Products in your Carts:({{itemsCounts()}})</p></span>   
+    
+</div>
+<div class="card text-bg-light mb-3" style="max-width: 18rem;" *ngFor="let item of items">
+    <div class="card-header">{{ item.name }}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{ item.descriptions }}</h5>
+      <p class="card-text">{{ item.price | currency }}</p>
+      <form (ngSubmit)="onSubmit()">
+        <button class="btn btn-outline-info rounded float-start" type="submit" routerLink="/pay" routerLinkActive="active">Purchase</button>
+      </form>
+      <button class="btn btn-outline-info rounded float-start" (click)=" clearCart()"  >delete </button>
+    </div>
+</div>

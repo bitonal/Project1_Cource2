@@ -1,0 +1,31 @@
+<div class="box mt-5">
+  <div class="container my-2 w-5">
+    <div id="search-component">
+      <div>
+        <h4>Search by Name:</h4>
+        <input #searchBox id="search-box form-control" [(ngModel)]="filterText" class="form-control" style="width: 450; padding:2px 20px;margin:10px 0px; height:30px" />
+        <br>
+      </div>
+    </div>
+      
+            <div class="container">
+                <div class="body">
+                  <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col col-12 col-md-6 col-lg-3"  *ngFor= "let Item of product |  filterProduct:filterText">
+                      <div class="card  h-100" style="width: 18rem;">
+                          <img src = {{Item.photoURL}} class="card-img-top" ><!--src = {{good.photoURL}}-->
+                          <div class="card-body">
+                            <h5 class="card-title">{{Item.name|uppercase}}</h5>
+                            <p class="card-text">{{Item.price|currency}}</p>
+                          <button  class="btn btn-primary"  [routerLink]="['/details',Item.id]"  routerLinkActive="active"    >Add To Basket</button>
+                          </div>
+                        </div>
+                  </div>
+                  </div><br><br>
+              </div>
+        
+  </div>
+</div>
+  
+  
+  

@@ -1,0 +1,19 @@
+<div class="container  box mt-5"   >
+ <table class="table table-hover  table-bordered">
+  <tr>
+    <th>id</th>
+    <th>name of product</th>
+    <th>price of product</th>
+    <th>descriptions of product</th>
+    <th>delete?</th>
+  </tr>
+  <tr  *ngFor="let items of   ItemAdds">
+    <th>{{items.id}}</th>
+    <th>{{items.name}} </th>
+    <th>{{items.price}} </th>
+    <th>{{items.descriptions}} </th>
+    <th><button class="btn btn btn-danger"  (click)="onDelete(items.name)">x</button></th>
+  </tr>
+ 
+ </table>
+</div>

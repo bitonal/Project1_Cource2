@@ -1,0 +1,11 @@
+nav{
+    background: linear-gradient(to left,rgb(177, 80, 67),rgb(209, 189, 179));
+    color: white;
+    size: 100px;
+    align-items: center;
+  
+}
+a{
+    text-decoration: none;
+   
+}

@@ -1,0 +1,28 @@
+
+  <div class="box mt-5">
+    <div class="card mb-3  border-info" style="max-width: 540px;"  >
+        <div class="row g-0" *ngIf="product">
+          <div class="col-md-4">
+            <img  [src]="product.photoURL" class="img-fluid rounded-start">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{product.name |titlecase}}</h5>
+              <p class="card-text">{{product.descriptions}}</p>
+              <p class="card-text">{{ product.price | currency }}</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+            <div class="box mb-2 ">
+              <div class="row">
+                <div class="col-2">
+                  <button class="btn btn-outline-info " (click)="AddToCart(product)">Bay</button>
+                </div>
+                <div class="col-7">
+                  <button class="btn btn-outline-info" [routerLink] = "'/products'">Back To List Product</button>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>

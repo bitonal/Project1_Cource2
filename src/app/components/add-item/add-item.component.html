@@ -1,0 +1,51 @@
+<div class="container box mt-5  ">
+   
+      <div class="mb-3 row" >
+        <label >ID PRODUCT:</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control"
+           placeholder = "add id of Product" id = "idItem" [(ngModel)]="idItem" name ="idItem1">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label >NAME PRODUCT:</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control"  placeholder = "add name of Product" 
+          id = "nameItem" [(ngModel)]="nameItem"  name ="name1Item" >
+        </div>
+      </div>
+    <div class="mb-3 row">
+      <label >PRICE PRODUCT:</label>
+      <div class="col-sm-5">
+        <input type="text"  class="form-control"  
+        placeholder = "add Price of Product" id = "priceItem" [(ngModel)]="priceItem"  name ="price1Item">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label >Descriptions PRODUCT:</label>
+      <div class="col-sm-5">
+        <input type="text"  class="form-control" 
+       placeholder = "add Descriptions of Product"
+        id = "descItem" [(ngModel)]="descItem"  name ="desc3Item"> 
+      </div>
+    </div><br>
+    <div class="mb-3 row ">
+      <label >CATEGORY PRODUCT:</label>
+      <div class="col-sm-5">
+        <select name="categoryItem" id="categoryItem"  class="form-control"  [(ngModel)]="categoryItem"  name ="catItem">
+          <option value="fruite">fruits</option>
+          <option value="vegetable">vegetable</option>
+          <option value="meet">meet</option>
+          <option value="juices">juices</option>
+        </select>
+      </div>
+    </div><br>
+    <div>
+      <button class="btn btn-success" type="button" (click)="AddNewItem()"  >Add New  Product</button>
+    </div>
+    <br><br>
+  <div>
+    <app-view-item></app-view-item>
+  </div>
+   
+</div>

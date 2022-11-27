@@ -1,0 +1,44 @@
+<div class="container body box mt-5">
+  <div class="form">
+      <h2 style="text-align:center ;">welcom to the Page of </h2><br>
+      <form novalidate (ngSubmit)="Pass_change(regForm)" #regForm="ngForm">
+          <div>
+              <input type="email" class="form-control" name="email" id="e1" placeholder="Enter Your Email!" email ngModel required #femail="ngModel">
+              <div>
+                  <small *ngIf="femail.invalid && femail.touched">email is required</small>
+                
+              </div>
+          </div><br>
+          <div>
+              <input type="password" class="form-control" name="password" id="p1" placeholder="Enter old Your Password" ngModel required  #pass="ngModel">
+              <div>
+                  <small *ngIf="pass.invalid && pass.touched">Password is required</small>
+              </div>
+          </div><br>
+          <div>
+            <input type="password" class="form-control" name="password" id="p2" placeholder="Enter Your new Password"  required [(ngModel)]=new_pass 
+            #pass_1="ngModel"
+            minlength="7" [ngClass]="{'is-invalid':(pass_1.touched||pass_1.dirty)&&!pass_1.valid}">
+            <div>
+                <small *ngIf="pass_1.invalid && pass_1.touched">Password is required</small>
+            </div>
+        </div><br>
+        <div>
+            <input type="password" class="form-control" name="password"  placeholder="Re-enter Password" required 
+            id="p3"  
+            name="pass_2" 
+            [(ngModel)]=r_new_pass 
+            #pass_2="ngModel"
+            minlength="7"
+            [ngClass]="{'is-invalid':(pass_2.touched||pass_2.dirty)&&!pass_2.valid}">
+            <div>
+                <small *ngIf="pass_2.invalid && pass_2.touched">Password is required</small>
+            </div>
+        </div><br>
+          <div>
+              <input type="submit" class="btn btn-primary "  value="Change" [disabled]="!regForm.valid">
+          </div>
+         
+      </form>
+  </div>
+</div>
